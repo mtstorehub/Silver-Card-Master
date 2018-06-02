@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Angular Material style sheet -->
+	<link rel="stylesheet" href="plugin/css/angular-material.min.css">
+	<link rel="stylesheet" href="plugin/css/styles.css">
+	<link rel="stylesheet" href="plugin/css/bootstrap.min.css">
+
+
+</head>
+<body ng-coak>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+		<a class="navbar-brand" href="#">Card Master</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+				<li class="nav-item active">
+					<a class="nav-link" href="#">Create Agency <span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Manager</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">User Log</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Recharge</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Register</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Login</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Change Password</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<br>
+	<md-content layout="row" layout-align="center" layout-padding="layout-padding" ng-controller="createAgency-controller">
+		<md-card>
+			<md-toolbar>
+				<div class="md-toolbar-tools createAgency">
+					<h2><span>CREATE NEW AGENCY</span></h2>
+				</div>
+			</md-toolbar>
+			<md-card-content>
+				<form name="createAgencyForm">
+					<md-input-container class="md-icon-float md-block">
+						<!-- Use floating label instead of placeholder -->
+						<label>(Charge Enable)</label>
+						<md-icon md-svg-src="plugin/img/icons/money.svg" class="icons"></md-icon>
+						<md-select ng-model="choice">
+							<md-option ng-repeat="choice in charge_enable_choices" value="{{choice}}">{{choice}}</md-option>
+						</md-select>
+					</md-input-container>
+					<br>
+					<md-input-container class="md-icon-float md-block">
+						<label style="line-height: 4;margin-left: 4px">Percent 0.01 ~ 1.00</label>
+						<label style="line-height: 1;margin-left: 40px">[{{rating  }}]</label>
+						<div layout="row" layout-align="start center">
+							<md-icon md-svg-src="plugin/img/icons/percent.svg" class="icons"></md-icon>
+							<md-slider flex class="md-primary" md-discrete ng-model="rating" min=0.01 max=1.00 step=0.01 aria-label="rating" layout-margin>
+							</md-slider>
+						</div>
+					</md-input-container>
+
+					<md-input-container class="md-icon-float md-block">
+						<label>User Name</label>
+						<md-icon md-svg-src="plugin/img/icons/name.svg" class="icons"></md-icon>
+						<input id="username" ng-model="username" type="text">
+					</md-input-container>
+
+					<md-input-container class="md-icon-float md-block">
+						<label>Password</label>
+						<md-icon md-svg-src="plugin/img/icons/lock.svg" class="icons"></md-icon>
+						<input id="user_password" ng-model="password" type="password">				
+					</md-input-container>
+
+					<md-input-container class="md-icon-float md-block">
+						<label>Confirm Password</label>
+						<md-icon md-svg-src="plugin/img/icons/re-lock.svg" class="icons"></md-icon>
+						<input id="user_retypepassword" ng-model="confirm_password" type="password">
+					</md-input-container>
+
+					<md-input-container class="md-block">
+						<md-button class="md-raised md-primary" ng-click="createAgency()"><md-icon md-svg-src="plugin/img/icons/account-multiple-plus.svg"></md-icon> OK</</md-button>
+					</md-input-container>
+				</form>
+			</md-card-content>
+		</md-card>	
+	</md-content>
+	
+	<script src="plugin/js/angular.min.js"></script>
+	<script src="plugin/js/angular-animate.min.js"></script>
+	<script src="plugin/js/angular-aria.min.js"></script>
+	<script src="plugin/js/angular-messages.min.js"></script>
+	<!-- Angular Material Library -->
+	<script src="plugin/js/angular-material.min.js"></script> 
+	<script src="plugin/js/jquery.js"></script> 
+	<script src="plugin/js/bootstrap.min.js"></script> 
+
+	<!-- business logic -->
+	<script type="text/javascript" src="app.js"></script>
+	<script>
+
+		$(document).ready(function () {
+			$(".navbar-nav li a").click(function(event) {
+				$(".navbar-collapse").collapse('hide');
+			});
+		});
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Angular Material style sheet -->
+	<link rel="stylesheet" href="plugin/css/angular-material.min.css">
+	<link rel="stylesheet" href="plugin/css/styles.css">
+	<link rel="stylesheet" href="plugin/css/bootstrap.min.css">
+
+
+</head>
+<body ng-coak>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+		<a class="navbar-brand" href="#">Card Master</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+				<li class="nav-item">
+					<a class="nav-link" href="#">Create Agency <span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="#">Manager</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">User Log</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Recharge</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Register</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Login</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Change Password</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<br>
+	<md-content layout="column" layout-align="start none" layout-padding ng-controller="gameManager-controller" class="md-padding">
+		<div layout="row" layout-align="start start">
+			<md-input-container class="md-icon-float md-block">
+				<md-select ng-model="users">
+					<md-option value="all-users" ng-selected="true">all-users</md-option>
+					<md-option value="individual-users">individual-users</md-option>
+				</md-select>
+			</md-input-container>
+			<md-input-container class="md-block" md-no-float layout="row">			
+				<input id="userid" ng-model="id" type="text" placeholder="By ID">
+				<md-icon md-svg-src="plugin/img/icons/magnify.svg" class="icons"></md-icon>
+			</md-input-container>
+			<md-input-container class="md-block" md-no-float layout="row">			
+				<input id="nicknameid" ng-model="nickname" type="text" placeholder="By Name">
+				<md-icon md-svg-src="plugin/img/icons/magnify.svg" class="icons"></md-icon>
+			</md-input-container>
+		</div>
+				
+		<div class="table-responsive">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>Coins</th>
+						<th>Charge</th>
+						<th>Returned</th>
+						<th>Buy</th>
+						<th>Back</th>				
+						<th>Charge Switch</th>
+						<th>Agency Limit</th>
+						<th>Percent</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>KoKyawKyaw888</td>
+						<td>6548484</td>
+						<td>548484811</td>
+						<td>1848949848</td>
+						<td>4568887</td>
+						<td>6000000</td>
+						<td>1</td>
+						<td>30</td>
+						<td>1</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<p>statistics all</p>	
+		<div class="table-responsive">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>UserCount</th>
+						<th>TotalCoins</th>
+						<th>TotalCharge</th>
+						<th>TotalReturned</th>
+						<th>TotalAgencyProfit</th>
+						<th>TotalProfit</th>				
+						<th>TotalPH_LOSE</th>
+						<th>Total HQL_LOSE</th>
+						<th>Total MAG_LOSE</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>1000</td>
+						<td>6971791</td>
+						<td>571981359</td>
+						<td>4465126</td>
+						<td>53745568</td>
+						<td>66107288</td>
+						<td>14091781</td>
+						<td>8911201</td>
+						<td>296548</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>	
+
+		<p>history</p>
+		<div class="table-responsive">
+			<table class="table">
+				<thead>
+					<tr>
+						<th></th>
+						<th>TotalCoins</th>
+						<th>TotalCharge</th>
+						<th>TotalReturned</th>
+						<th>TotalAgencyProfit</th>
+						<th>TotalProfit</th>				
+						<th>TotalPH_LOSE</th>
+						<th>Total HQL_LOSE</th>
+						<th>Total MAG_LOSE</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Last Record</td>
+						<td>12345</td>
+						<td>12345</td>
+						<td>12345</td>
+						<td>12345</td>
+						<td>12345</td>
+						<td>12345</td>
+						<td>12345</td>
+						<td>12345</td>
+					</tr>
+					<tr>
+						<td>Increasement</td>
+						<td><input type="text" value='0'></td>
+						<td><input type="text" value='12345'></td>
+						<td><input type="text" value='12345'></td>
+						<td><input type="text" value='12345'></td>
+						<td><input type="text" value='12345'></td>
+						<td><input type="text" value='12345'></td>
+						<td><input type="text" value='12345'></td>
+						<td><input type="text" value='12345'></td>														
+					</tr>
+				</tbody>
+			</table>			
+		</div>
+		<p>Remember Lists:<br/>operation status:</p>
+		<div class="table-responsive">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>operation</th>
+						<th>indexer</th>
+						<th>Remember Time</th>
+						<th>ID</th>
+						<th>Coins</th>
+						<th>Charged</th>				
+						<th>Returned</th>
+						<th>Agency Profit</th>
+						<th>Profit</th>
+						<th>Mark Time</th>
+						<th>Creator</th>
+						<th>PH_LOSE</th>
+						<th>HQL_LOSE</th>
+						<th>MAG_LOSE</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td></td>
+						<td>3162</td>
+						<td>2018-1-1 12:22:25</td>
+						<td>KoKyaw</td>
+						<td>4258</td>
+						<td>57894</td>
+						<td>12488</td>
+						<td>48488</td>
+						<td>848488</td>
+						<td></td>						
+						<td>adminshan</td>
+						<td>264848</td>
+						<td>0</td>
+						<td>45648</td>
+					</tr>
+					<tr>
+						<td><button>Mark</button></td>
+						<td>3162</td>
+						<td>2018-1-1 12:22:25</td>
+						<td>KoKyaw</td>
+						<td>4258</td>
+						<td>57894</td>
+						<td>12488</td>
+						<td>48488</td>
+						<td>848488</td>
+						<td></td>						
+						<td>adminshan</td>
+						<td>264848</td>
+						<td>0</td>
+						<td>45648</td>
+					</tr>
+				</tbody>
+			</table>			
+		</div>
+
+		<p>player list</p>
+		<div class="table-responsive">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>User Name</th>
+						<th>Frozen</th>
+						<th>COIN</th>
+						<th>Buy</th>
+						<th>Returned</th>				
+						<th>Agency Profit</th>
+						<th>PH_LOSE</th>
+						<th>HQL_LOSE</th>
+						<th>MAG_LOSE</th>						
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>POgroup001</td>
+						<td>Nub888</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<td>POgroup002</td>
+						<td>AGFighter</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+					</tr>
+				</tbody>
+			</table>			
+		</div>
+	</md-content>
+	<script src="plugin/js/angular.min.js"></script>
+	<script src="plugin/js/angular-animate.min.js"></script>
+	<script src="plugin/js/angular-aria.min.js"></script>
+	<script src="plugin/js/angular-messages.min.js"></script>
+	<!-- Angular Material Library -->
+	<script src="plugin/js/angular-material.min.js"></script> 
+	<script src="plugin/js/jquery.js"></script> 
+	<script src="plugin/js/bootstrap.min.js"></script> 
+
+	<!-- business logic -->
+	<script type="text/javascript" src="app.js"></script>
+	<script>
+
+		$(document).ready(function () {
+			$(".navbar-nav li a").click(function(event) {
+				$(".navbar-collapse").collapse('hide');
+			});
+		});
+
+	</script>
+</body>
+</html>

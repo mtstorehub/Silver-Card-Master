@@ -1,0 +1,35 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300ita‌​lic,400italic,500,500italic,700,700italic,900italic,900);
+body{background-color: #FAFAFA!important;}
+
+.icons{color:#9E9E9E;}
+.md-padding{padding: 40px;}#FAFAFA
+
+/*content*/
+md-content{margin-bottom: 0px!important;}
+
+/*nav bar*/
+.navbar-dark.bg-primary{background-color: #3F51B5!important;
+	box-shadow: 2px 3px 4px rgba(0, 0, 0, .5);}
+.nav-item{
+	padding: 0px 20px 0px 20px;}
+.nav-item.active{
+	border-radius: 2px;
+	background-color: rgba(0,0,0,0.1);}
+
+/*toolbar colors*/
+.md-toolbar-tools{width: 350px;}
+.md-toolbar-tools.register{background-color: #FF7043;}
+.md-toolbar-tools.change-password{background-color: #E64A19;}
+
+/*form color themes*/
+form[name='register'] > md-input-container:not(.md-input-invalid).md-input-focused * {
+    color: #FF7043
+}
+form[name='change-password'] > md-input-container:not(.md-input-invalid).md-input-focused * {
+    color: #E64A19
+}
+
+/*button colors*/
+
+
+

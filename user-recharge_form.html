@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Angular Material style sheet -->
+	<link rel="stylesheet" href="plugin/css/angular-material.min.css">
+	<link rel="stylesheet" href="plugin/css/styles.css">
+	<link rel="stylesheet" href="plugin/css/bootstrap.min.css">
+
+
+</head>
+<body ng-coak>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+		<a class="navbar-brand" href="#">Card Master</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+				<li class="nav-item">
+					<a class="nav-link" href="#">Create Agency <span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Manager</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">User Log</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="#">Recharge</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Register</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Login</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Change Password</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<br>
+	<md-content layout="column" layout-align="start none" ng-controller="userReturn-controller" class="md-padding">
+		<md-toolbar class="md-warn">
+			<div class="md-toolbar-tools">
+				<h2 class="md-flex">USER RETURN</h2>
+			</div>
+		</md-toolbar>
+		<md-input-container class="md-block" layout="row">
+			<button type="button" class="btn btn-outline-primary" style="margin: 10px;" ng-class="{active:isSelected(1)}" ng-click="selectButton(1)">User Charge</button>
+			<button type="button" class="btn btn-outline-primary" style="margin: 10px;" ng-class="{active:isSelected(2)}" ng-click="selectButton(2)">User Return</button>
+			<button type="button" class="btn btn-outline-primary" style="margin: 10px;" ng-class="{active:isSelected(3)}" ng-click="selectButton(3)">Agency Charge</button>
+			<button type="button" class="btn btn-outline-primary" style="margin: 10px;" ng-class="{active:isSelected(4)}" ng-click="selectButton(4)">Agency Return</button>			
+		</md-input-container>
+		
+		<md-content  layout-gt-sm="row" layout-padding>
+			<md-input-container class="md-icon-float">
+				<label>ID</label>
+				<md-icon md-svg-src="plugin/img/icons/name.svg" class="icons"></md-icon>
+				<input id="user_id" ng-model="user_id" type="text">
+			</md-input-container>
+
+			<md-input-container class="md-icon-float">
+				<label>Coin</label>
+				<md-icon md-svg-src="plugin/img/icons/bitcoin.svg" class="icons"></md-icon>
+				<input id="coin" ng-model="coin" type="text">
+			</md-input-container>
+			<md-input-container>
+				<md-button id="btnCommit" class="md-raised md-warn" ng-click="commit()">Commit<md-icon md-svg-src="plugin/img/icons/source-commit.svg"></md-icon></</md-button>
+			</md-input-container>
+		</md-content>
+
+		<div class="table-responsive">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Time</th>
+						<th>From</th>
+						<th>To</th>
+						<th>Incr</th>
+						<th>Agency_coins_from</th>
+						<th>Agency_coins_to</th>				
+						<th>User_coins_to</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="record in data">
+						<td>{{record.time}}</td>
+						<td>{{record.from}}</td>
+						<td>{{record.to}}</td>
+						<td>{{record.incr}}</td>
+						<td>{{record.acf}}</td>
+						<td>{{record.act}}</td>
+						<td>{{record.uct}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>	
+		<md-divider></md-divider>
+		<md-toolbar class="md-warn">
+			<div class="md-toolbar-tools">
+				<h2 class="md-flex">FIND PLAYER</h2>
+			</div>
+		</md-toolbar>
+		
+
+		<md-content  layout-gt-sm="row" layout-padding>
+			<md-input-container md-no-float>			
+				<input id="player_id" ng-model="player_id" type="text" placeholder="Find ID">
+				<md-icon md-svg-src="plugin/img/icons/magnify.svg" class="icons"></md-icon>
+			</md-input-container>
+			<md-input-container md-no-float>			
+				<input id="nicknameid" ng-model="nickname" type="text" placeholder="Find Nickname">
+				<md-icon md-svg-src="plugin/img/icons/magnify.svg" class="icons"></md-icon>
+			</md-input-container>
+		</md-content>
+
+	</md-content>
+	
+	<script src="plugin/js/angular.min.js"></script>
+	<script src="plugin/js/angular-animate.min.js"></script>
+	<script src="plugin/js/angular-aria.min.js"></script>
+	<script src="plugin/js/angular-messages.min.js"></script>
+	<!-- Angular Material Library -->
+	<script src="plugin/js/angular-material.min.js"></script> 
+	<script src="plugin/js/jquery.js"></script> 
+	<script src="plugin/js/bootstrap.min.js"></script> 
+
+	<!-- business logic -->
+	<script type="text/javascript" src="app.js"></script>
+	<script>
+
+		$(document).ready(function () {
+			$(".navbar-nav li a").click(function(event) {
+				$(".navbar-collapse").collapse('hide');
+			});
+		});
+
+	</script>
+</body>
+</html>

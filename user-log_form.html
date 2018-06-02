@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Angular Material style sheet -->
+	<link rel="stylesheet" href="plugin/css/angular-material.min.css">
+	<link rel="stylesheet" href="plugin/css/styles.css">
+	<link rel="stylesheet" href="plugin/css/bootstrap.min.css">
+
+
+</head>
+<body ng-coak>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+		<a class="navbar-brand" href="#">Card Master</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+				<li class="nav-item">
+					<a class="nav-link" href="#">Create Agency <span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Manager</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="#">User Log</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Recharge</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Register</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Login</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Change Password</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<br>
+	
+	<md-content layout="column" layout-align="space-around none" layout-padding ng-controller="userlog-controller" class="md-padding">
+
+		<div layout="row">
+			<md-input-container class="md-icon-float md-block">
+				<md-radio-group ng-model="log" class="md-primary"  layout = "row">
+					<md-radio-button ng-repeat="d in radioData" ng-value="d.value">	
+						{{d.label}} 
+					</md-radio-button>
+				</md-radio-group>
+			</md-input-container>
+		</div>
+		
+		<div layout="row">
+			<md-input-container md-no-float class="md-block">
+				<md-icon md-svg-src="plugin/img/icons/name.svg" class="icons"></md-icon>
+				<input id="userid" ng-model="userid" type="text" placeholder="User ID">
+			</md-input-container>
+			<md-input-container>
+				<md-button class="md-raised md-primary" ng-click="search()">Search</md-button>		
+			</md-input-container>
+		</div>
+
+		<md-input-container layout="row" layout-align="start start" style="padding-left: 0px;">
+			<md-datepicker ng-model="searchDate" md-placeholder="Enter date" md-open-on-focus></md-datepicker>
+		</md-input-container>
+		
+		<div class="table-responsive">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Time</th>
+						<th>From</th>
+						<th>To</th>
+						<th>Incr</th>
+						<th>Agency_coins_from</th>
+						<th>Agency_coins_to</th>				
+						<th>User_coins_to</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="record in data">
+						<td>{{record.time}}</td>
+						<td>{{record.from}}</td>
+						<td>{{record.to}}</td>
+						<td>{{record.incr}}</td>
+						<td>{{record.acf}}</td>
+						<td>{{record.act}}</td>
+						<td>{{record.uct}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>		
+	</md-content>
+	
+	<script src="plugin/js/angular.min.js"></script>
+	<script src="plugin/js/angular-animate.min.js"></script>
+	<script src="plugin/js/angular-aria.min.js"></script>
+	<script src="plugin/js/angular-messages.min.js"></script>
+	<!-- Angular Material Library -->
+	<script src="plugin/js/angular-material.min.js"></script> 
+	<script src="plugin/js/jquery.js"></script> 
+	<script src="plugin/js/bootstrap.min.js"></script> 
+
+	<!-- business logic -->
+	<script type="text/javascript" src="app.js"></script>
+	<script>
+
+		$(document).ready(function () {
+			$(".navbar-nav li a").click(function(event) {
+				$(".navbar-collapse").collapse('hide');
+			});
+		});
+
+	</script>
+</body>
+</html>
