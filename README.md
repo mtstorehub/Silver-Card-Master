@@ -1,3 +1,2 @@
-# Silver Card
-
-Admin Control Forms in customer management.
+/* Authorized by MT (BTT founder) */ 
+Angular js material Forms (admin control) in Clients's data management.
