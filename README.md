@@ -1,2 +1,4 @@
-/* Authorized by MT (BTT founder) */ 
-Angular js material Forms (admin control) in Clients's data management.
+
+## Angular js material Forms (admin control) in Clients's data management.
+
+***Screenshots below***
